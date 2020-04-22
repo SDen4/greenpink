@@ -3,19 +3,20 @@
 }
 
 body {
-  font-family: 'Open Sans', Helvetica, sans-serif;
-  font-size: 16px;
   display: flex;
   justify-content: center;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-size: 16px;
   background-color: #222;
   height: 100%;
+  margin: 0;
   color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .wrapper {
-  width: 768px;
+  width: 1480px;
   height: 100%;
   display: flex;
   flex-direction: column;
