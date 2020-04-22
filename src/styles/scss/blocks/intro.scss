@@ -1,34 +1,74 @@
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    color: $default-color;
-    @include tablet {
-        color: $main-color;
-    };
-}
-
-.title {
-    text-align: center;
-}
-
 .header {
+    width: 100%;
+    height: 10vh;
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: gray;
 }
 
-.menu {
-    display: flex;
-    margin-left: 30px;
+.link,
+.link_footer {
+    cursor: pointer;
+    position: relative;
+    width: 46px;
+    transition: .3s;
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 17px;
+        left: 0;
+        width: inherit;
+        height: 2px;
+        background-color: #FFA07A;
+        opacity: 0;
+        transition: .3s;
+    }
+
+    &:hover {
+        color: #FFA07A;
+        transition: .3s;
+
+        &:after {
+            opacity: 1;
+        }
+    }
 }
 
-.menu__link {
-    margin-right: 10px;
+.section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.section_1 {
+    background-color: #FFA07A;
+}
+
+.section_2 {
+    background-color: #FF7F50;
+}
+
+.section_3 {
+    background-color: #FF6347;
 }
 
 .footer {
-    display: flex;
     width: 100%;
-    height: 200px;
-    background-image: url('/assets/images/2.jpg');
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: gray;
 }
