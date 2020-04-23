@@ -1,12 +1,16 @@
-//colors
+//main colors
+$bodyBGColor: #222;
 $headerBGColor: gray;
 $footerBGColor: gray;
-
 $sectionBGColor1: #FFA07A;
 $sectionBGColor2: #FF7F50;
 $sectionBGColor3: #FF6347;
-
 $linkHoverColor: #FFA07A;
+
+//indicator
+$indicatorColor: #800000;
+$indicatorHeight: 5px;
+$indicatorInnertion: .5s;
 
 //vars
 $trahsitionHoverDuration: .3s;
@@ -17,4 +21,3 @@ $laptop: 980px;
 $tablet: 768px;
 $smartphone: 480px;
 $phone: 320px;
-
