@@ -9,6 +9,14 @@ html(lang='en')
   body
     .wrapper
       .indicator
+      button.gmb-button(type="button")
+        .gmb-button__section
+      .gmb-menu-hide
+      .gmb-menu
+        button.gmb-button_close(type="button")
+        .gmb-menu__wrapper
+          ul.menu__list
+            +menu("link_gmb", links)
       section.section.section_1 Block1
         header.header
           +menu("link", links)
