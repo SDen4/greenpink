@@ -8,7 +8,7 @@ const openGmb = document.querySelector(".gmb-button"),
     currentWidth = parseInt(window.getComputedStyle(menuGmb).width);
 
 let step = 4, //step in px of animation, speed of appear & disappear
-    currernRight = 0,
+    currentRight = 0,
     fixRight = 25; //max right size in px for gmb menu 
 
 //open gmb-menu
@@ -59,3 +59,5 @@ for (let item of closeGmbMenuItem) {
         };
     });
 };
+
+export default closeGmb;

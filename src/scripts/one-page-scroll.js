@@ -1,3 +1,5 @@
+import closeGmb from "./gamburger-menu.js";
+
 const blocks = document.querySelectorAll(".section"),
   block = document.querySelector("section"),
   sectionHeight = parseInt(window.getComputedStyle(block).height),
@@ -84,6 +86,7 @@ for (let j = 0; j < linksGmb.length; j++) {
         top: arrSections[j],
         behavior: "smooth"
       });
+      closeGmb.click(); // close gmb menu after click by one of the links in gmb menu
       step = j;
       setTimeout(() => { inScroll = false }, durationOneScroll);
     };
