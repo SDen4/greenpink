@@ -9,7 +9,7 @@ const blocks = document.querySelectorAll(".section"),
 
 
 let inScroll = false, //flag for correct duration step by step
-  durationOneScroll = 200, //duration if one step
+  durationOneScroll = 150, //duration if one step
   arrSections = [],
   step = 0;
 
@@ -95,15 +95,16 @@ for (let j = 0; j < linksGmb.length; j++) {
 
 //one page scroll by keydown
 window.addEventListener("keydown", function (e) {
-  e.preventDefault();
   if (inScroll === false) {
     inScroll = true;
     if (e.keyCode === 40) {
       //move down
+      e.preventDefault();
       step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
       scrollToStep(step)
     } else if (e.keyCode === 38) {
       //move up
+      e.preventDefault();
       step === 0 ? step = 0 : step = step - 1;
       scrollToStep(step)
     } else {
