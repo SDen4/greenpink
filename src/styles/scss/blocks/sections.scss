@@ -3,7 +3,7 @@
 .link_gmb {
     cursor: pointer;
     position: relative;
-    width: 46px;
+    width: 50px;
     transition: $trahsitionHoverDuration;
 
     &:after {
@@ -31,6 +31,13 @@
 
 .link_gmb {
     color:#696969;
+}
+
+.link_footer {
+    @include tablet {
+        width: 90px;
+        text-align: center;
+    }
 }
 
 .section {

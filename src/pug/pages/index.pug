@@ -14,11 +14,12 @@ html(lang='en')
       .gmb-menu-hide
       .gmb-menu
         button.gmb-button_close(type="button")
-        .menu__list
+        nav.navigation_gmb
           +menu("link_gmb", links)
       section.section.section_1 Block1
         header.header
-          +menu("link", links)
+          nav.navigation
+            +menu("link", links)
       section.section.section_2 Block2
       section.section.section_3 Block3
       section.section.section_1 Block4
@@ -28,4 +29,5 @@ html(lang='en')
       section.section.section_2 Block8
       section.section.section_3 Block9
         footer.footer
-          +menu("link_footer", links)
+          nav.navigation
+            +menu("link_footer", links)
