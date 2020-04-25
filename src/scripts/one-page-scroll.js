@@ -17,6 +17,14 @@ for (let i = 0; i < blocks.length; i++) {
   arrSections.push(sectionHeight * i);
 };
 
+function scrollToStep(step) {
+  window.scrollTo({
+    top: arrSections[step],
+    behavior: "smooth"
+  });
+  setTimeout(() => { inScroll = false }, durationOneScroll);
+};
+
 //one page scroll by mouse wheel
 document.addEventListener("wheel", function (event) {
   if (inScroll === false) {
@@ -24,22 +32,11 @@ document.addEventListener("wheel", function (event) {
     //move down
     if (event.deltaY > 0) {
       step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
-      window.scrollTo({
-        top: arrSections[step],
-        behavior: "smooth"
-      });
-console.log(arrSections[step]);
-
-      setTimeout(() => { inScroll = false }, durationOneScroll);
+      scrollToStep(step)
     } else {
       //move up
       step === 0 ? step = 0 : step = step - 1;
-      window.scrollTo({
-        top: arrSections[step],
-        behavior: "smooth"
-      });
-console.log(arrSections[step]);
-      setTimeout(() => { inScroll = false }, durationOneScroll);
+      scrollToStep(step)
     };
   };
 });
@@ -97,26 +94,20 @@ for (let j = 0; j < linksGmb.length; j++) {
 };
 
 //one page scroll by keydown
-document.addEventListener("keydown", function (event) {
-event.preventDefault();
+window.addEventListener("keydown", function (e) {
+  e.preventDefault();
   if (inScroll === false) {
     inScroll = true;
-    //move down
-    if (event.keyCode == 40) {
+    if (e.keyCode === 40) {
+      //move down
       step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
-      window.scroll({
-        top: arrSections[step],
-        behavior: "smooth"
-      });
-      setTimeout(() => { inScroll = false }, durationOneScroll);
-    } else if (event.keyCode == 38) {
+      scrollToStep(step)
+    } else if (e.keyCode === 38) {
       //move up
       step === 0 ? step = 0 : step = step - 1;
-      window.scroll({
-        top: arrSections[step],
-        behavior: "smooth"
-      });
-      setTimeout(() => { inScroll = false }, durationOneScroll);
+      scrollToStep(step)
+    } else {
+      inScroll = false;
     };
   };
 });
