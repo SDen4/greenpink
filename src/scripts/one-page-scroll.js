@@ -28,6 +28,8 @@ document.addEventListener("wheel", function (event) {
         top: arrSections[step],
         behavior: "smooth"
       });
+console.log(arrSections[step]);
+
       setTimeout(() => { inScroll = false }, durationOneScroll);
     } else {
       //move up
@@ -36,6 +38,7 @@ document.addEventListener("wheel", function (event) {
         top: arrSections[step],
         behavior: "smooth"
       });
+console.log(arrSections[step]);
       setTimeout(() => { inScroll = false }, durationOneScroll);
     };
   };
@@ -92,3 +95,28 @@ for (let j = 0; j < linksGmb.length; j++) {
     };
   });
 };
+
+//one page scroll by keydown
+document.addEventListener("keydown", function (event) {
+event.preventDefault();
+  if (inScroll === false) {
+    inScroll = true;
+    //move down
+    if (event.keyCode == 40) {
+      step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
+      window.scroll({
+        top: arrSections[step],
+        behavior: "smooth"
+      });
+      setTimeout(() => { inScroll = false }, durationOneScroll);
+    } else if (event.keyCode == 38) {
+      //move up
+      step === 0 ? step = 0 : step = step - 1;
+      window.scroll({
+        top: arrSections[step],
+        behavior: "smooth"
+      });
+      setTimeout(() => { inScroll = false }, durationOneScroll);
+    };
+  };
+});
