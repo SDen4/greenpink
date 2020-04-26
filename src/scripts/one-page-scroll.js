@@ -112,3 +112,43 @@ window.addEventListener("keydown", function (e) {
     };
   };
 });
+
+//detect the mobile device
+let isMobile = false;
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+  isMobile = true;
+} else {
+  isMobile = false;
+}
+
+//one-page-scroll by swipe for mobile devices
+if(isMobile) {
+  //points of start and end of touch
+  let startTouch, endTouch
+
+  //coords of point of start
+  document.addEventListener("touchstart", function () {
+    if (inScroll === false) {
+      inScroll = true
+      startTouch = window.pageYOffset;
+      inScroll = false;
+    }
+  });
+
+  //coords of point of end of touch and function of moove by event of the end of touch
+  document.addEventListener("touchend", function () {
+    if (inScroll === false) {
+      inScroll = true
+      endTouch = window.pageYOffset;
+      if(startTouch-endTouch < 0) {
+        step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
+        scrollToStep(step);
+      } else if (startTouch-endTouch > 0) {
+        step === 0 ? step = 0 : step = step - 1;
+        scrollToStep(step);
+      } else {
+        inScroll = false;
+      };
+    };
+  });
+};
