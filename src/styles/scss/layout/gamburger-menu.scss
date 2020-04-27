@@ -18,12 +18,14 @@
 
 .gmb-button {
     top: 50px;
-    right: 50px;
+    right: 30px;
 }
 
 .gmb-button_close {
-    top: 25px;
-    right: 21px;
+    // top: 25px;
+    // right: 21px;
+    top: 7px;
+    right: 5px;
 }
 
 .gmb-button__section {
@@ -58,12 +60,21 @@
 //gamburger-menu
 .gmb-menu-hide {
     display: none;
-    background-color: transparent;
     position: absolute;
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
+    animation: blur .5s ease forwards;
+}
+
+@keyframes blur {
+    0% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: $gmbOpenBGBlur;
+    }
 }
 
 .gmb-menu {
