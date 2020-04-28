@@ -90,14 +90,9 @@ for (let j = 0; j < linksGmb.length; j++) {
 
 //one-page-scroll by push up and down keys
 window.addEventListener("keydown", function (e) {
-  const tagName = e.target.tagName.toLowerCase();
-
   //unable using the scroll by up and down buttons in textarea & input
-  if (tagName == 'textarea' || tagName == 'input') {
-    inScroll = true;
-  } else {
-    inScroll = false;
-  };
+  let tagName = e.target.tagName.toLowerCase();
+  if (tagName == 'textarea' || tagName == 'input') {return};
 
   if (inScroll === false) {
     inScroll = true;
