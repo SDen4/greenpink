@@ -90,9 +90,18 @@ for (let j = 0; j < linksGmb.length; j++) {
 
 //one-page-scroll by push up and down keys
 window.addEventListener("keydown", function (e) {
+  const tagName = e.target.tagName.toLowerCase();
+
+  //unable using the scroll by up and down buttons in textarea & input
+  if (tagName == 'textarea' || tagName == 'input') {
+    inScroll = true;
+  } else {
+    inScroll = false;
+  };
+
   if (inScroll === false) {
     inScroll = true;
-    if (e.keyCode === 40) {
+    if (e.keyCode === 40 || e.keyCode === 32) {
       //move down
       e.preventDefault();
       step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
