@@ -2,7 +2,7 @@
 
 ###  Start new project using this build:
 ```sh
-$ git clone https://github.com/SDen4/webpacktemplate-scss-pug.git
+$ git clone https://github.com/SDen4/one-page-scroll.git
 $ cd webpacktemplate-scss-pug
 $ npm i
 $ git init
