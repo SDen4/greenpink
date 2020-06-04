@@ -10,7 +10,7 @@ body {
   background-color: $bodyBGColor;
   height: 100%;
   margin: 0;
-  color: white;
+  color: $textColor;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

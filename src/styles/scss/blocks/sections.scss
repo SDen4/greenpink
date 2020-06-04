@@ -4,6 +4,7 @@
     cursor: pointer;
     position: relative;
     width: 50px;
+    color: $textColorLinks;
     transition: $trahsitionHoverDuration;
 
     &:after {
@@ -30,7 +31,7 @@
 }
 
 .link_gmb {
-    color:#696969;
+    color:$textColor;
 }
 
 .link_footer {
