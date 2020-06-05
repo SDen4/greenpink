@@ -3,7 +3,7 @@
 .link_gmb {
     cursor: pointer;
     position: relative;
-    width: 50px;
+    width: fit-content;
     color: $textColorLinks;
     transition: $trahsitionHoverDuration;
 
@@ -13,7 +13,6 @@
         position: absolute;
         top: 20px;
         left: 0;
-        width: inherit;
         height: 2px;
         background-color: $linkHoverColor;
         opacity: 0;
@@ -26,6 +25,7 @@
 
         &:after {
             opacity: 1;
+            width: -webkit-fill-available;
         }
     }
 }
@@ -59,4 +59,20 @@
 
 .section_3 {
     background-color: $sectionBGColor3;
+}
+
+.section__about {
+    display: flex;
+    flex-direction: column;
+}
+
+.section__last-orders {
+    display: flex;
+    flex-direction: column;
+}
+
+.section__contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

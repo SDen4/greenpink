@@ -16,13 +16,19 @@ html(lang='en')
         .gmb-button_close(type="button")
         nav.navigation_gmb
           +menu("link_gmb", links)
-      section.section.section_1
+      section.section.section_1.section__about
         header.header
           nav.navigation
             +menu("link", links)
         h1 Green Pink Store
-      section.section.section_2 Block2
-        input
+        h2 Сайт находится в разработке
+      section.section.section_2.section__last-orders
+        h2 Последние работы
+        .last-orders
+          .last-orders_block.block__1 BlockAppear#1
+          .last-orders_block.block__2 BlockAppear#2
+          .last-orders_block.block__3 BlockAppear#3
+          .last-orders_block.block__4 BlockAppear#4
       section.section.section_3 Block3
         textarea
       section.section.section_1 Block4
@@ -30,7 +36,15 @@ html(lang='en')
       section.section.section_3 Block6
       section.section.section_1 Block7
       section.section.section_2 Block8
-      section.section.section_3 Block9
+      section.section.section_3.section__contacts
+        .contacts
+          .contacts__phone
+            .contacts__phone_pic
+            a.contacts__link(href="tel:+79221307256") +7 922 130 72 56
+          ul.contacts__socials
+            li.contacts__socials_item
+              a.contacts__link(href="https://instagram.com/greenpink_ekb?igshid=mtyqdn94rgfy" target="_blank") Instagram
+            li.contacts__socials_item
         footer.footer
           nav.navigation
             +menu("link_footer", links)

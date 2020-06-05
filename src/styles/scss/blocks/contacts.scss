@@ -1,0 +1,23 @@
+.contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 90%;
+}
+
+.contacts__phone {
+    display: flex;
+    width: 100%;
+}
+
+.contacts__link {
+    transition: $trahsitionHoverDuration;
+    &:hover {
+        color: $linkHoverColorContacts;
+    }
+}
+
+.contacts__socials {
+    width: 100%;
+}
