@@ -5,13 +5,22 @@
     width: 100%;
     height: 90vh;
     overflow: hidden;
+    @include smartphone {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
 }
 
 .last-orders_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 40%;
+    height: 45%;
     border-radius: 5px;
     background-color: $color4;
-    margin: 2%;
+    margin: 1%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,6 +31,27 @@
     &:hover {
         box-shadow: 5px 5px 6px 2px $color3;
     }
+
+    @include tablet {
+        width: 45%;
+    }
+
+    @include smartphone {
+        width: 47%;
+    }
+}
+
+.last-orders_block_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 95%;
+}
+
+.last-orders_pic {
+    width: fit-content;
+    object-fit: cover;
 }
 
 .last-orders_block_active {
@@ -35,4 +65,14 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.enlarge {
+    width: 55%;
+    height: 60%;
+}
+
+.shrink {
+    width: 25%;
+    height: 30%;
 }
