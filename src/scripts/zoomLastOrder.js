@@ -25,3 +25,23 @@ for(let i=0; i<pics.length; i++) {
     }
   });
 };
+
+// const wrapper = document.querySelector('.last-orders');
+// const sectionA = document.querySelector('.section__last-orders');
+
+// console.log(sectionA);
+
+// for(let i=0; i<pics.length; i++) {
+//   let pic = pics[i];
+//   pic.addEventListener('click', () => {
+//     let wrapper = document.querySelector('.last-orders');
+//     let sectionA = document.querySelector('.section__last-orders');
+
+//     let elem = document.createElement('div');
+//     elem.innerHTML = "<h1>Привет!</h1>";
+//     // document.sectionA.insertBefore(elem, wrapper);
+    
+//     elem.className = 'enlarge';
+//     elem.style.backgroundColor = 'red'
+//   });
+// };
