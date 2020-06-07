@@ -3,11 +3,11 @@
 
 mixin menu(className, items)
     each item in items
-        a(class=`${className}`)= item
+        a(class=className)= item
 
 mixin smoothBlocks(className, classNameBlock, classNameWrapper, classNamePic, items)
-    div(class=`${className}`)
+    div(class=className)
         each item in items
-            div(class=`${classNameBlock}`)
-                div(class=`${classNameWrapper}`)
-                    img(class=`${classNamePic}` src=`${item}`)
+            div(class=classNameBlock)
+                div(class=classNameWrapper)
+                    img(class=classNamePic src=item)
