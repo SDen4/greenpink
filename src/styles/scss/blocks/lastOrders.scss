@@ -6,11 +6,6 @@
     width: 100%;
     height: 90vh;
     overflow: hidden;
-    @include smartphone {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: center;
-    }
 }
 
 .last-orders_block {
@@ -78,7 +73,12 @@
     height: 99%;
     margin: auto;
     z-index: 5;
+
     @include tablet {
         width: 93%;
+    }
+    
+    @include smartphone {
+        width: 98%;
     }
 }

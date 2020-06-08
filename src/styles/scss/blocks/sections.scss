@@ -62,17 +62,13 @@
 }
 
 .section__about {
-    display: flex;
     flex-direction: column;
 }
 
 .section__last-orders {
-    display: flex;
     flex-direction: column;
 }
 
-.section__contacts {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.section__bouquets {
+    flex-direction: column;
 }
