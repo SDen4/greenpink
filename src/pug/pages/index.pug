@@ -29,12 +29,12 @@ html(lang='en')
         h2 Букеты
         .bouquets__acco
           button.bouquets__button#button_left
+            .bouquets__button_segment.bouquets__button_segment_left
           .bouquets__acco_window
             .bouquets__acco_line#line
-              .bouquets__acco_item.bouquets__acco_item_1 1
-              .bouquets__acco_item.bouquets__acco_item_2 2
-              .bouquets__acco_item.bouquets__acco_item_3 3
+              +bouquets("bouquets__acco_item", "bouquets__acco_pic", instaBouquets)
           button.bouquets__button#button_right
+            .bouquets__button_segment
       section.section.section_1 Block4
       section.section.section_2 Block5
       section.section.section_3 Block6

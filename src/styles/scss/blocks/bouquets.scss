@@ -1,17 +1,53 @@
 .bouquets__acco {
     display: flex;
+    justify-content: center;
     width: 60vw;
     height: 60vh;
 }
 
 .bouquets__button {
-    width: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
     height: 100%;
-    background-color: $color3;
-    transition: .3s;
-    &:hover {
-        background-color: $color4;
+    background-color: transparent;
+    transition: .5s;
+    &:hover .bouquets__button_segment {
+        background-color: $color5-plus37;
     }
+    &:hover {
+        background-color: $color2;
+    }
+    &:active {
+        background-color: $color3;
+    }
+}
+
+.bouquets__button_segment {
+    width: 50px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: $color5;
+    transform: rotate(-45deg);
+    position: relative;
+    transition: .5s;
+    &:after{
+        content: "";
+        display: block;
+        position: absolute;
+        top:-22px;
+        left: 22px;
+        width: inherit;
+        height: inherit;
+        border-radius: inherit;
+        background-color: inherit;
+        transform: rotate(90deg);
+    }
+}
+
+.bouquets__button_segment_left {
+    transform: scale(-1,1) rotate(-45deg);
 }
 
 .bouquets__acco_window {
@@ -27,6 +63,8 @@
     left: 0;
     height: 100%;
     width: fit-content;
+    will-change: left;
+    transition: left .5s;
 }
 
 .bouquets__acco_item {
@@ -34,14 +72,8 @@
     height: 100%;
 }
 
-.bouquets__acco_item_1 {
-    background-color: $color2;
-}
-
-.bouquets__acco_item_2 {
-    background-color: $color5;
-}
-
-.bouquets__acco_item_3 {
-    background-color: $color1-plus50;
+.bouquets__acco_pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
