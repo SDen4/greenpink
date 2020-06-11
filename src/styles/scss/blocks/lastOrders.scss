@@ -48,6 +48,8 @@
 .last-orders_pic {
     width: fit-content;
     object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .last-orders_block_active {
