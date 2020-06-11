@@ -9,6 +9,7 @@ moveRight.addEventListener('click', () => {
         move -= 1;
         line.style.left = `${move*100}%`;
     };
+    console.log(move);
 });
 
 moveLeft.addEventListener('click', () => {
@@ -16,4 +17,5 @@ moveLeft.addEventListener('click', () => {
         move += 1;
         line.style.left = `${move*100}%`;
     };
+    console.log(move);
 });
