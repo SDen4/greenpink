@@ -27,19 +27,7 @@ html(lang='en')
         +smoothBlocks('last-orders', instaLinks)
       section.section.section__bouquets
         h2.subtitle Букеты
-        .bouquets__acco
-          button.bouquets__button.bouquets__button_left#button_left
-            .bouquets__button_segment.bouquets__button_segment_left
-          .bouquets__acco_window
-            .bouquets__acco_line#line
-              +bouquets("bouquets", instaBouquets)
-          button.bouquets__button.bouquets__button_right#button_right
-            .bouquets__button_segment
-        .bouquets__info
-          .bouquets__info_price 1990 руб.
-          .bouquets__info_text
-            .bouquets__info_name Букет Привет
-            .bouquets__info_descr Lorem ipsum dolor sit amet consectetur adipisicing elit. At, qui quam? Praesentium dolorem temporibus exercitationem veniam libero nemo perspiciatis incidunt dolorum ut, itaque earum possimus, vel minima, iusto molestias velit.
+        +bouquets("bouquets", instaBouquets)
       section.section.section__contacts
         .contacts
           .contacts__phone

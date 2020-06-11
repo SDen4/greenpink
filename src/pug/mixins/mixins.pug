@@ -1,6 +1,12 @@
 - var menuItems = ["О нас", "Работы", "Букеты", "Контакты"];
 - var instaLinks = ["https://instagram.fhel6-1.fna.fbcdn.net/v/t51.2885-15/e35/70391656_2515621652003366_1811675408870812340_n.jpg?_nc_ht=instagram.fhel6-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=bMnqDXQIPl0AX9pn4WL&oh=3ee63f5e643a4fde42c640518148edb1&oe=5F0237A9","https://instagram.fhel6-1.fna.fbcdn.net/v/t51.2885-15/e35/71287057_519103098921075_2680781908099209629_n.jpg?_nc_ht=instagram.fhel6-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=jWqpGZIdx5QAX9jLZYM&oh=5cea27ecc6a3fa8397e7425527f8e0cc&oe=5F02D1DA","https://instagram.fhel6-1.fna.fbcdn.net/v/t51.2885-15/e35/70803853_541882596579207_7902213244381787121_n.jpg?_nc_ht=instagram.fhel6-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=rRWQzBOpGzQAX8Za_kp&oh=af128d4767f5df2466bbb6406ca1dec4&oe=5F04A762","https://instagram.fhel3-1.fna.fbcdn.net/v/t51.2885-15/e35/64505666_454088488767522_8966959240115725410_n.jpg?_nc_ht=instagram.fhel3-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=-n8XMReLw3kAX92GYru&oh=ed6e753638c50fa3f92c86da0e6b1b38&oe=5F020CFB"];
-- var instaBouquets = ["https://instagram.fhel6-1.fna.fbcdn.net/v/t51.2885-15/e35/70391656_2515621652003366_1811675408870812340_n.jpg?_nc_ht=instagram.fhel6-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=bMnqDXQIPl0AX9pn4WL&oh=3ee63f5e643a4fde42c640518148edb1&oe=5F0237A9","https://instagram.fhel6-1.fna.fbcdn.net/v/t51.2885-15/e35/71287057_519103098921075_2680781908099209629_n.jpg?_nc_ht=instagram.fhel6-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=jWqpGZIdx5QAX9jLZYM&oh=5cea27ecc6a3fa8397e7425527f8e0cc&oe=5F02D1DA","https://instagram.fhel6-1.fna.fbcdn.net/v/t51.2885-15/e35/70803853_541882596579207_7902213244381787121_n.jpg?_nc_ht=instagram.fhel6-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=rRWQzBOpGzQAX8Za_kp&oh=af128d4767f5df2466bbb6406ca1dec4&oe=5F04A762","https://instagram.fhel3-1.fna.fbcdn.net/v/t51.2885-15/e35/64505666_454088488767522_8966959240115725410_n.jpg?_nc_ht=instagram.fhel3-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=-n8XMReLw3kAX92GYru&oh=ed6e753638c50fa3f92c86da0e6b1b38&oe=5F020CFB"];
+
+- var b1 = {id: 10001, name: "Летний вечер", price: "1400", descr: "Букет с розами, хлопком, лимониумом.", picture: "/assets/images/bouquets/summerEvening.jpg"};
+- var b2 = {id: 10002, name: "Букет Привет", price: "1999", descr: "Букет привет. Букет привет. Букет привет. Букет привет. Букет привет. Букет привет. ", picture: "/assets/images/bouquets/privet.jpg"};
+- var b3 = {id: 10003, name: "Букет Паштет", price: "999", descr: "Букет Паштет.Букет Паштет.Букет Паштет.Букет Паштет.Букет Паштет.Букет Паштет.Букет Паштет.Букет Паштет. ", picture: "/assets/images/bouquets/pashtet.jpg"};
+- var instaBouquets = [b1, b2, b3];
+
+
 
 mixin menu(className, items)
     each item in items
@@ -16,6 +22,18 @@ mixin smoothBlocks(className, items)
 
 
 mixin bouquets(className, items)
-    each item in items
-        div(class=`${className}__acco_item`)
-            img(class=`${className}__acco_pic` src=item)
+    div(class=`${className}__acco`)
+        button(class=`${className}__button ${className}__button_left` id='button_left')
+            div(class=`${className}__button_segment ${className}__button_segment_left`)
+        div(class=`${className}__acco_window`)
+            div(class=`${className}__acco_line` id='line')
+                each item in items
+                    div(class=`${className}__acco_item`)
+                        img(class=`${className}__acco_pic` src=item.picture)
+                        div(class=`${className}__info`)
+                            div(class=`${className}__info_price`)= `${item.price} руб.`
+                            div(class=`${className}__info_text`)
+                                div(class=`${className}__info_name`)= item.name
+                                div(class=`${className}__info_descr`)= item.descr
+        button(class=`${className}__button ${className}__button_right` id='button_right')
+            div(class=`${className}__button_segment`)
