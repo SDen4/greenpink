@@ -3,14 +3,16 @@
     justify-content: center;
     width: $widthAcco;
     height: 80vh;
-    margin-bottom: 1%;
+    @include desktop {
+        width: $widthAccoDesktop;
+        height: 90vh;
+    }
 }
 
 .bouquets__button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: fit-content;
     height: 75%;
     background-color: transparent;
     transition: $trahsitionHoverDuration;
@@ -63,15 +65,18 @@
     width: $widthAccoWindow;
     position: relative;
     overflow: hidden;
+    @include desktop {
+        width: $widthAccoWindowDesktop;
+    }
 }
 
 .bouquets__acco_line {
     display: flex;
+    justify-content: flex-start;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    width: fit-content;
     will-change: left;
     transition: left $trahsitionHoverDuration;
 }
@@ -81,6 +86,9 @@
     flex-direction: column;
     width: $widthAccoWindow;
     height: 100%;
+    @include desktop {
+        width: $widthAccoWindowDesktop;
+    }
 }
 
 .bouquets__acco_pic {
@@ -91,7 +99,7 @@
 
 .bouquets__info {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     height: 25%;
@@ -101,8 +109,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
-    height: 50%;
+    padding: 5px 10px;
     background-color: $color3;
     border-radius: $borderRadius;
 
@@ -123,9 +130,11 @@
     display: flex;
     align-items: center;
     height: 30%;
-
     font-family: 'Caveat', cursive;
     font-size: 42px;
+    @include desktop {
+        justify-content: center;
+    }
 }
 
 .bouquets__info_descr {
@@ -135,4 +144,7 @@
     height: 65%;
     font-family: 'Caveat', cursive;
     font-size: 24px;
+    @include desktop {
+        text-align: center;
+    }
 }
