@@ -55,6 +55,7 @@
     background-color: $sectionBGColor1;
     background-image: url("/assets/images/1.svg");
     background-position: bottom left;
+    background-size: contain;
 }
 
 .section__last-orders {
@@ -76,6 +77,7 @@
     background-color: $sectionBGColor2;
     background-image: url("/assets/images/2.svg");
     background-position: bottom left;
+    background-size: 35% 75%;
 }
 
 .subtitle {
