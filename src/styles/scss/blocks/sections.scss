@@ -48,22 +48,34 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-repeat: no-repeat;
 }
 
 .section__about {
     background-color: $sectionBGColor1;
+    background-image: url("/assets/images/1.svg");
+    background-position: bottom left;
 }
 
 .section__last-orders {
     background-color: $sectionBGColor2;
+    background-image: url("/assets/images/3.svg");
+    background-position: 113% 100%;
+    @include tablet {
+        background-position: 140% 100%;
+    }
 }
 
 .section__bouquets {
     background-color: $sectionBGColor1;
+    background-image: url("/assets/images/4.svg");
+    background-position: bottom center;
 }
 
 .section__contacts {
     background-color: $sectionBGColor2;
+    background-image: url("/assets/images/2.svg");
+    background-position: bottom left;
 }
 
 .subtitle {
