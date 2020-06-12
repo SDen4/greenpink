@@ -30,13 +30,14 @@ html(lang='en')
         +bouquets("bouquets", instaBouquets)
       section.section.section__contacts
         .contacts
-          .contacts__phone
-            .contacts__phone_pic
-            a.contacts__link(href="tel:+79221307256") +7 922 130 72 56
-          ul.contacts__socials
-            li.contacts__socials_item
+          ul.contacts__list
+            li.contacts__item
+              a.contacts__link(href="tel:+79221307256") +7 922 130 72 56
+            li.contacts__item
               a.contacts__link(href="https://instagram.com/greenpink_ekb?igshid=mtyqdn94rgfy" target="_blank") Instagram
-            li.contacts__socials_item
+          .contacts__dev
+            .contacts__dev_info Разработано 
+            a.contacts__link(href="https://sden4.github.io/portfolio/") SDen
         footer.footer
           nav.navigation
             +menu("link_footer", menuItems)

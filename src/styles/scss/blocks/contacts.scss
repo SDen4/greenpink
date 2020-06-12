@@ -2,13 +2,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    width: 90%;
+    align-items: center;
+    padding: 15px 20px;
+    border: 2px solid $color3;
+    border-radius: $borderRadius;
+    font-size: 24px;
 }
 
-.contacts__phone {
-    display: flex;
-    width: 100%;
+.contacts__list {
+    margin-bottom: 25%;
+}
+
+.contacts__item {
+    margin-bottom: 1%;
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .contacts__link {
@@ -18,6 +27,14 @@
     }
 }
 
-.contacts__socials {
-    width: 100%;
+.contacts__dev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    font-size: 18px;
+}
+
+.contacts__dev_info {
+    margin-right: 10px;
 }
