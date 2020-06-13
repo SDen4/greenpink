@@ -11,4 +11,9 @@
     @include tablet{
         display: none;
     }
+    @include laptop {
+        @include smartphoneVRT {
+            display: none;
+        }
+    }
 }

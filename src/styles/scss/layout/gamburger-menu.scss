@@ -14,6 +14,11 @@
     @include tablet {
         display: block;
     }
+    @include laptop {
+        @include smartphoneVRT {
+            display: block;
+        }
+    }
 }
 
 .gmb-button {
@@ -90,6 +95,11 @@
     align-items: center;
     @include tablet {
         display: flex;
+    }
+    @include laptop {
+        @include smartphoneVRT {
+            display: flex;
+        }
     }
 }
 

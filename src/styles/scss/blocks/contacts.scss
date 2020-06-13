@@ -7,6 +7,21 @@
     border: 2px solid $color5;
     border-radius: $borderRadius;
     font-size: 24px;
+    @include laptop {
+        @include smartphoneVRT {
+            margin-left: 250px;
+            margin-bottom: 65px;
+        }
+    }
+    @include tablet {
+        @include phoneVRT {
+            margin-left: 195px;
+            margin-bottom: 50px;
+        }
+    }
+    @include smartphone {
+        margin-bottom: 30%;
+    }
 }
 
 .contacts__item {
@@ -40,10 +55,9 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 5%;
+    bottom: 11%;
     right: 1%;
     font-size: 14px;
-    color: $textColorLinks;
 }
 
 .contacts__dev_info {

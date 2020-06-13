@@ -28,6 +28,12 @@
         box-shadow: 5px 5px 6px 2px $color3;
     }
 
+    @include laptop {
+        @include smartphoneVRT {
+            margin: .5%;
+        }
+    }
+
     @include tablet {
         width: 45%;
     }

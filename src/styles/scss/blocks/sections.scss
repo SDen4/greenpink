@@ -22,7 +22,6 @@
     &:hover {
         color: $linkHoverColor;
         transition: $trahsitionHoverDuration;
-
         &:after {
             opacity: 1;
             width: -webkit-fill-available;
@@ -38,6 +37,9 @@
     @include tablet {
         width: 90px;
         text-align: center;
+    }
+    @include phone {
+        width: 75px;
     }
 }
 
@@ -74,10 +76,16 @@
 }
 
 .section__contacts {
+    position: relative;
     background-color: $sectionBGColor2;
     background-image: url("/assets/images/2.svg");
     background-position: bottom left;
     background-size: 35% 75%;
+    @include laptop {
+        @include smartphoneVRT {
+            background-size: 35% 100%;
+        }
+    }
 }
 
 .subtitle {
