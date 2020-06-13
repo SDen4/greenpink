@@ -4,23 +4,31 @@
     justify-content: center;
     align-items: center;
     padding: 15px 20px;
-    border: 2px solid $color3;
+    border: 2px solid $color5;
     border-radius: $borderRadius;
     font-size: 24px;
 }
 
-.contacts__list {
-    margin-bottom: 25%;
-}
-
 .contacts__item {
-    margin-bottom: 1%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
     &:last-child {
         margin-bottom: 0;
     }
 }
 
+.contacts__pic {
+    width: 50px;
+    height: 50px;
+    margin-right: 25px;
+    &:hover {
+        fill: $color4
+    }
+}
+
 .contacts__link {
+    height: fit-content;
     transition: $trahsitionHoverDuration;
     &:hover {
         color: $linkHoverColorContacts;
@@ -31,8 +39,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    font-size: 18px;
+    position: absolute;
+    bottom: 5%;
+    right: 1%;
+    font-size: 14px;
+    color: $textColorLinks;
 }
 
 .contacts__dev_info {
