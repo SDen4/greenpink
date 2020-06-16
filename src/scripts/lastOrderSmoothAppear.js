@@ -1,5 +1,3 @@
-const { default: move } = require("./bouquetsAcco");
-
 const blocks = document.querySelectorAll('.last-orders_block');
 
 //detection of element visibility 
