@@ -1,4 +1,4 @@
-.about__title {
+.about__title_main, .about__subtitle{
     font-family: Caveat,cursive;
     text-align: right;
     width: 65%;
@@ -8,6 +8,7 @@
         }
     }
     @include tablet {
+        width:82%;
         @include smartphoneVRT {
             width: 87%;
         }
@@ -26,8 +27,11 @@
 }
 
 .about__title_main {
-    margin-bottom: 5%;
+    margin-bottom: 10%;
     font-size: 72px;
+    @include desktop {
+        margin-bottom: 15%;
+    }
     @include laptop {
         @include smartphoneVRT {
             margin-bottom: 2%;
@@ -35,6 +39,7 @@
         }
     }
     @include tablet {
+        margin-bottom: 15%;
         @include phoneVRT {
             font-size: 48px;
         }
