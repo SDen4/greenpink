@@ -1,0 +1,66 @@
+.about__title {
+    font-family: Caveat,cursive;
+    text-align: right;
+    width: 65%;
+    @include laptop {
+        @include smartphoneVRT {
+            width: 76%;
+        }
+    }
+    @include tablet {
+        @include smartphoneVRT {
+            width: 87%;
+        }
+        @include phoneVRT {
+            width: 75%;
+        }
+    }
+    @include smartphone {
+        width: 85%;
+    }
+    @include phone {
+        width: 95%;
+        text-align: center;
+    }
+
+}
+
+.about__title_main {
+    margin-bottom: 5%;
+    font-size: 72px;
+    @include laptop {
+        @include smartphoneVRT {
+            margin-bottom: 2%;
+            font-size: 64px;
+        }
+    }
+    @include tablet {
+        @include phoneVRT {
+            font-size: 48px;
+        }
+    }
+    @include smartphone {
+        margin-bottom: 25%;
+        font-size: 64px;
+    }
+    @include phone {
+        margin-bottom: 15%;
+    }
+}
+
+.about__subtitle {
+    font-size: 48px;
+    @include laptop {
+        @include smartphoneVRT {
+            font-size: 36px;
+        }
+    }
+    @include tablet {
+        @include phoneVRT {
+            font-size: 28px;
+        }
+    }
+    @include smartphone {
+        font-size: 36px;
+    }
+}
