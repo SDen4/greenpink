@@ -11,7 +11,7 @@
         content: "";
         display: block;
         position: absolute;
-        top: 20px;
+        top: 26px;
         left: 0;
         height: 2px;
         background-color: $linkHoverColor;
@@ -89,5 +89,10 @@
 }
 
 .subtitle {
+    font-family: Caveat,cursive;
+    font-size: 36px;
+}
+
+.subtitle__bouquets {
     margin-bottom: 1%;
 }
