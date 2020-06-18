@@ -25,6 +25,8 @@
         &:after {
             opacity: 1;
             width: -webkit-fill-available;
+            width: -moz-available;
+            width: -ms-available;
         }
     }
 }
