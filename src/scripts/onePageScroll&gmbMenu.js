@@ -6,8 +6,8 @@ const blocks = document.querySelectorAll(".section"),
   linksFooter = document.querySelectorAll(".link_footer"),
   linksGmb = document.querySelectorAll(".link_gmb");
 
-let inScroll = false; //flag for correct duration step by step
-let durationOneScroll = 150, //duration if one step
+let inScroll = false, //flag for correct duration step by step
+  durationOneScroll = 250, //duration if one step
   arrSections = [],
   step = 0;
 
@@ -15,13 +15,15 @@ for (let i = 0; i < blocks.length; i++) {
   arrSections.push(sectionHeight * i);
 };
 
+
 function scrollToStep(step) {
   window.scrollTo({
     top: arrSections[step],
     behavior: "smooth"
-  });
+  })
   setTimeout(() => { inScroll = false }, durationOneScroll);
 };
+
 
 //one-page-scroll by mouse wheel
 document.addEventListener("wheel", function (event) {
@@ -30,14 +32,16 @@ document.addEventListener("wheel", function (event) {
     //move down
     if (event.deltaY > 0) {
       step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
-      scrollToStep(step)
-    } else {
-      //move up
+      scrollToStep(step);
+    };
+    //move up
+    if (event.deltaY < 0) {
       step === 0 ? step = 0 : step = step - 1;
-      scrollToStep(step)
+      scrollToStep(step);
     };
   };
 });
+
 
 //one-page-scroll by click links in header
 for (let j = 0; j < links.length; j++) {
