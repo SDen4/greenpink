@@ -4,7 +4,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <h1>"Green Pink" admin panel</h1>
+                <h1 className="title">"Green Pink" admin panel</h1>
                 <p>test</p>
             </div>
         )

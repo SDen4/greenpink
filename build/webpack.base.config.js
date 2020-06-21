@@ -29,7 +29,7 @@ module.exports = {
     output: {
         path: PATHS.dist,
         filename: (pathData) => {
-            return pathData.chunk.name === "app" ? `${PATHS.assets}js/[name].js` : `js/index.js`
+            return pathData.chunk.name === "app" ? `${PATHS.assets}js/[name].js` : `jsAdmin/[name].js`
         },
         publicPath: ""
     },
@@ -104,7 +104,10 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: `${PATHS.assets}css/[name].css`,
+            // filename: `${PATHS.assets}css/[name].css`
+            moduleFilename: ({ name }) => {
+                return name === "app" ? `${PATHS.assets}css/[name].css` : `cssAdmin/admin.css`
+            },
         }),
         new CopyWebpackPlugin([
             {from: `${PATHS.src}/images`, to: `${PATHS.assets}images`},
