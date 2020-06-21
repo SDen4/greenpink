@@ -24,15 +24,14 @@ module.exports = {
 
     entry: {
         "app": PATHS.src,
-        "admin": "./src/admin/main.js"
+        "admin": "./src/admin/index.js"
     },
     output: {
         path: PATHS.dist,
-        // filename: `${PATHS.assets}js/[name].js`,
         filename: (pathData) => {
-            return pathData.chunk.name === "app" ? `${PATHS.assets}js/[name].js` : `${PATHS.admin}js/[name].js`
+            return pathData.chunk.name === "app" ? `${PATHS.assets}js/[name].js` : `js/index.js`
         },
-        publicPath: "",
+        publicPath: ""
     },
     module: {
         rules: [{
