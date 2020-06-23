@@ -1,0 +1,42 @@
+@mixin desktop() {
+    @media screen and (max-width: $desktop) {
+      @content;
+    }
+  }
+  
+  @mixin laptop() {
+    @media screen and (max-width: $laptop) {
+      @content;
+    }
+  }
+  
+  @mixin tablet() {
+    @media screen and (max-width: $tablet) {
+      @content;
+    }
+  }
+  
+  @mixin smartphone() {
+    @media screen and (max-width: $smartphone) {
+      @content;
+    }
+  }
+  
+  @mixin phone() {
+    @media screen and (max-width: $phone) {
+      @content;
+    }
+  }
+  
+  
+  @mixin smartphoneVRT() {
+    @media screen and (max-height: $smartphone) {
+      @content;
+    }
+  }
+  
+  @mixin phoneVRT() {
+    @media screen and (max-height: $phone) {
+      @content;
+    }
+  }

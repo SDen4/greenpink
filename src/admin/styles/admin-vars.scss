@@ -1,0 +1,60 @@
+//colors
+$color1: #D5B0AC;
+$color2: #CEA0AE;
+$color3:  #684551;
+$color4: #402E2A;
+$color5: #9CD08F;
+$color1-plus50: #EAD7D5;
+$color5-plus37: #C1E2B9;
+
+//main colors
+$bodyBGColor: #EAD7D5; //$color1-plus50
+$headerBGColor: #684551; //color3
+$footerBGColor: #684551; //color3
+$sectionBGColor1: #D5B0AC; //color1
+$sectionBGColor2: #CEA0AE; //color2
+$linkHoverColor: #D5B0AC; //color1
+$textColor: #402E2A; //color4
+$textColorPrice: #FF8C00;
+$textColorLinks: #9CD08F; //color5
+
+//accordeon
+$widthAcco: 70vw;
+$widthAccoWindow: 60vw;
+
+$widthAccoDesktop: 95vw;
+$widthAccoWindowDesktop: 80vw;
+
+$widthAccoTablet: 100vw;
+$widthAccoWindowTablet: 79vw;
+
+$widthAccoWindowSmart: 72vw;
+
+$widthAccoWindowPhone: 68vw;
+
+//contacts
+$linkHoverColorContacts: #9CD08F; //color5
+
+//indicator
+$indicatorColor: #9CD08F; //color5
+$indicatorHeight: 5px;
+$indicatorInnertion: .5s;
+
+//gamburger-menu
+$gmbBGColor: #CEA0AE; //color2
+$gmbMenuWidth: 200px;
+$animDuration: .45s;
+$gmbButtonColorOpen: #9CD08F; //color5
+$gmbButtonColorClose: #FF4500;
+$gmbOpenBGBlur: rgba($color: #9CD08F, $alpha: .3);
+
+//vars
+$trahsitionHoverDuration: .5s;
+$borderRadius: 5px;
+
+//resolutions
+$desktop: 1280px;
+$laptop: 980px;
+$tablet: 768px;
+$smartphone: 480px;
+$phone: 320px;

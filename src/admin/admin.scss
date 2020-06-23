@@ -1,1 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lobster&family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+@import "./styles/admin-vars.scss";
+@import "./styles/admin-mixins.scss";
+@import "./styles/admin-base.scss";
+@import "./styles/admin-buttons.scss";
+
+
 @import "./styles/app.scss";
+@import "./styles/admin-header.scss";
+@import "./styles/admin-main.scss";
+@import "./styles/admin-catalog.scss";

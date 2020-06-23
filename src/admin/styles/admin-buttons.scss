@@ -1,0 +1,39 @@
+button {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    outline: none;
+}
+
+.admin__button {
+    padding: 5px 15px;
+    font-size: 18px;
+    border-radius: $borderRadius;
+    color: $color3;
+    transition: $trahsitionHoverDuration;
+    &:hover {
+        color: $bodyBGColor;
+        background-color: $color2;
+    }
+    &:active {
+        transition: none;
+    }
+}
+
+.admin__button_exit {
+    &:active {
+        background-color: $gmbButtonColorClose;
+    }
+}
+
+.admin__button_delete {
+    &:active {
+        background-color: $gmbButtonColorClose;
+    }
+}
+
+.admin__button_create {
+    &:active {
+        background-color: $color5;
+    }
+}
