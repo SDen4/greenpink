@@ -1,6 +1,6 @@
 # Green Pink Store
 
-## Using stack:
+## Technology stack :
 ```sh
 html
 pug
