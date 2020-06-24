@@ -26,13 +26,17 @@ button {
     }
 }
 
-.admin__button_delete {
+.admin__button_delete, .admin__button_form_cancel {
     &:active {
         background-color: $gmbButtonColorClose;
     }
 }
 
-.admin__button_create {
+.admin__button_form_cancel {
+    margin-right: 20px;
+}
+
+.admin__button_create, .admin__button_form_save {
     &:active {
         background-color: $color5;
     }

@@ -1,0 +1,26 @@
+.admin__nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.admin__nav_link {
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    margin-right: 1%;
+    border-radius: $borderRadius;
+    background-color: $color2;
+    transition: $trahsitionHoverDuration;
+    &:hover {
+        color: $bodyBGColor;
+        background-color: $color3;
+    }
+    &:active {
+        background-color: $color5;
+        transition: none;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+}
