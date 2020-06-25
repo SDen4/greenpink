@@ -111,6 +111,7 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             {from: `${PATHS.src}/images`, to: `${PATHS.assets}images`},
+            {from: `${PATHS.src}/admin/images`, to: `imagesAdmin`},
             {from: `${PATHS.src}/static`, to: ""}
 
         ]),

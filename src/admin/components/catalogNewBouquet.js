@@ -21,7 +21,7 @@ class CatalogNewBouquet extends Component {
                         </label>
                     </div>
                     <div className="admin__new-bouquet_form_part admin__new-bouquet_form_part_right">
-                        <label className="admin__new-buoquet_download" for="admin__add_bouquet-photo">
+                        <label className="admin__new-buoquet_download" htmlFor="admin__add_bouquet-photo">
                             <span className="admin__new-buoquet_download_text">Download photo</span>
                             <button className="admin__button">Download</button>
                         </label>

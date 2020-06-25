@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import Catalog from "./catalog";
+import Login from "./login";
 
 
 class App extends Component {
     render() {
         return (
             <div className="admin-wrapper">
+                <Login />
                 <header className="admin__header">
                     <h1 className="admin__title">"Green Pink" admin panel</h1>
                     <button className="admin__button admin__button_exit">Exit</button>
