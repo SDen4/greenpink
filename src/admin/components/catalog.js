@@ -4,20 +4,30 @@ import CatalogNewBouquet from "./catalogNewBouquet";
 
 
 class Catalog extends Component {
+    state = {
+        newBouquet: false
+    }
     render() {
+        console.log(this.state.newBouquet);
         return (
             <section className="admin admin__catalog">
-                <CatalogNewBouquet />
-                <CatalogList />
+                <CatalogNewBouquet handleClickNewBouquet={this.state.newBouquet} />
+                <CatalogList handleClickNewBouquet={this.state.newBouquet} />
                 <div className="catalog__footer">
-                    <div className="catalog__footer_delete">
+                    <div className={`${this.state.newBouquet ? "catalog__footer_delete_unactive" : "catalog__footer_delete"}`}>
                         <input className="catalog__footer_all-items" type="checkbox"></input>
                         <button className="admin__button admin__button_delete">Delete</button>
                     </div>
-                    <button className="admin__button admin__button_create">New bouquet</button>
+                    <button onClick={this.handleClickNewBouquet} className={`${this.state.newBouquet && "admin__button_create_active"} ${"admin__button admin__button_create"}`}>New bouquet</button>
                 </div>
             </section>
         )
+    }
+    handleClickNewBouquet = () => {
+        this.setState({
+            newBouquet: !this.state.newBouquet
+        })
+        console.log(this.state.newBouquet);
     }
 };
 

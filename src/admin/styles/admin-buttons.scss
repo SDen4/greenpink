@@ -41,3 +41,11 @@ button {
         background-color: $color5;
     }
 }
+
+.admin__button_create_active {
+    background-color: $color5;
+    &:hover {
+        color: $color3;
+        background-color: $color5-plus37;
+    }
+}

@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
 
 class CatalogNewBouquet extends Component {
+    constructor(props) {
+        super(props)
+    }
     render() {
+        const {handleClickNewBouquet} = this.props;
         return (
-            <div className="catalog__new-bouquet">
+            <div className={`${handleClickNewBouquet ? "catalog__new-bouquet_active" : "catalog__new-bouquet"}`}>
                 <h2 className="admin__subtitle">Add the new bouquet</h2>
                 <form className="admin__new-bouquet_form">
                     <div className="admin__new-bouquet_form_part admin__new-bouquet_form_part_left">
