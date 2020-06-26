@@ -8,9 +8,9 @@ class Catalog extends Component {
         newBouquet: false
     }
     render() {
-        console.log(this.state.newBouquet);
+        const {activeSection} = this.props;
         return (
-            <section className="admin admin__catalog">
+            <section className={`${activeSection === "Catalog" ? "admin admin__catalog" : "admin__catalog_unactive"}`}>
                 <CatalogNewBouquet handleClickNewBouquet={this.state.newBouquet} />
                 <CatalogList handleClickNewBouquet={this.state.newBouquet} />
                 <div className="catalog__footer">

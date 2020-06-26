@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
 import Catalog from "./catalog";
+import LastBouquets from "./lastBouquets";
 import Login from "./login";
 
 
 class App extends Component {
+    state = {
+        activeSection: "Catalog"
+    }
     render() {
         return (
             <div className="admin-wrapper">
@@ -15,14 +19,31 @@ class App extends Component {
                 <main className="admin__main">
                     <div className="admin__nav_container">
                         <nav className="admin__nav">
-                            <a className="admin__nav_link">Catalog</a>
-                            <a className="admin__nav_link">Last bouquets</a>
+                            <a onClick={this.changeSectionToCatalog}
+                               className={`${this.state.activeSection === "Catalog" && "admin__nav_active"} ${"admin__nav_link"}`}
+                            >Catalog</a>
+                            <a onClick={this.changeSectionToLastBouquets}
+                               className={`${this.state.activeSection === "LastBouquets" && "admin__nav_active"} ${"admin__nav_link"}`}
+                            >Last bouquets</a>
                         </nav>
                     </div>
-                    <Catalog />
+                    <Catalog activeSection={this.state.activeSection} />
+                    <LastBouquets activeSection={this.state.activeSection} />
                 </main>
             </div>
         )
+    }
+    changeSectionToCatalog = () => {
+        this.setState({
+            activeSection: "Catalog"
+        })
+        console.log(this.state.activeSection)
+    }
+    changeSectionToLastBouquets = () => {
+        this.setState({
+            activeSection: "LastBouquets"
+        })
+        console.log(this.state.activeSection)
     }
 };
 

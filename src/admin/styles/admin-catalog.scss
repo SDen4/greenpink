@@ -1,12 +1,11 @@
-.admin {
+.admin__catalog {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 93%;
+    justify-content: space-between;
 }
 
-.admin__catalog {
-    justify-content: space-between;
+.admin__catalog_unactive {
+    display: none;
 }
 
 .catalog__content {
