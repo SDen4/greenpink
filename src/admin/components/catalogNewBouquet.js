@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
 
 class CatalogNewBouquet extends Component {
+    constructor(props) {
+        super(props);
+        this.fileInput = React.createRef();
+    }
     state = {
         bouquetName: "",
-        bouquetPrice: 0,
-        bouquetDescription: ""
+        bouquetPrice: 999,
+        bouquetDescription: "",
+        bouquetPic: {}
     }
     render() {
         const {handleClickNewBouquet} = this.props;
@@ -46,13 +51,25 @@ class CatalogNewBouquet extends Component {
                     </div>
                     <div className="admin__new-bouquet_form_part admin__new-bouquet_form_part_right">
                         <label className="admin__new-buoquet_download" htmlFor="admin__add_bouquet-photo">
+                            <input 
+                                id="admin__add_bouquet-photo" 
+                                type="file" 
+                                name="bouquetPic"
+                                accept="image/*"
+                                ref={this.fileInput}
+                            ></input>
                             <span className="admin__new-buoquet_download_text">Download photo</span>
-                            <button className="admin__button">Download</button>
+                            <div className="admin__button">Download</div>
                         </label>
-                        <input id="admin__add_bouquet-photo" type="file"></input>
                         <div className="admin__new-bouquet_form_submit">
-                            <button type="reset" className="admin__button admin__button_form_cancel">Cansel</button>
-                            <button type="submit" className="admin__button admin__button_form_save">Save</button>
+                            <button 
+                                type="reset" 
+                                className="admin__button admin__button_form_cancel"
+                            >Cansel</button>
+                            <button 
+                                type="submit" 
+                                className="admin__button admin__button_form_save"
+                            >Save</button>
                         </div>
                     </div>
                 </form>
@@ -61,14 +78,17 @@ class CatalogNewBouquet extends Component {
     }
     handleChange = (event) => {
         const target = event.target;
-        const value = target.value;
+        const value = target.name === "bouquetPic" ? this.fileInput.current.files[0] : target.value;
         const name = target.name;
         this.setState({
             [name]: value
         })
     }
-    sendNewBouquet = () => {
-        alert("New bouquet name: " + this.state.bouquetName + ", price: " + this.state.bouquetPrice + ", description: " + this. state.bouquetDescription)
+    sendNewBouquet = (event) => {
+        event.preventDefault();
+        alert("New bouquet name: " + this.state.bouquetName + ", price: " + this.state.bouquetPrice + ", description: " + this. state.bouquetDescription + ", photo: " + this.state.bouquetPic);
+        console.log(this.fileInput.current.files[0].name);
+        console.log(this.state.bouquetPic);
     }
 };
 
