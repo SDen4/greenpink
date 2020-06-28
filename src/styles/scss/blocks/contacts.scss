@@ -22,6 +22,9 @@
     @include smartphone {
         margin-bottom: 30%;
     }
+    @include phone {
+        padding: 15px 10px;
+    }
 }
 
 .contacts__item {
@@ -39,6 +42,9 @@
     margin-right: 25px;
     &:hover {
         fill: $color4
+    }
+    @include phone {
+        margin-right: 5px;
     }
 }
 
