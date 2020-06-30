@@ -41,22 +41,12 @@ html(lang='ru')
         h2.about__subtitle Авторские букеты из цветов и фруктов
       section.section.section__last-orders
         h2.subtitle Последние работы
-        +smoothBlocks('last-orders', instaLinks)
+        +smoothBlocks("last-orders", instaLinks)
       section.section.section__bouquets
         h2.subtitle.subtitle__bouquets Букеты
         +bouquets("bouquets", instaBouquets)
       section.section.section__contacts
-        .contacts
-          ul
-            li.contacts__item
-              img.contacts__pic(srcset="/assets/images/socials/phone.svg")
-              a.contacts__link(href="tel:+79221307256" target="_blank") +7 922 130 72 56
-            li.contacts__item
-              img.contacts__pic(srcset="/assets/images/socials/insta.svg")
-              a.contacts__link(href="https://instagram.com/greenpink_ekb?igshid=mtyqdn94rgfy" target="_blank") greenpink_ekb
-            li.contacts__item
-              img.contacts__pic(srcset="/assets/images/socials/whatsapp.svg")
-              a.contacts__link(href="https://wa.me/79221307256" target="_blank") +7 922 130 72 56
+        +contacts("contacts", contacts)
         .contacts__dev
           .contacts__dev_info Разработано 
           a.contacts__link(href="https://sden4.github.io/portfolio/") SDen
