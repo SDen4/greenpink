@@ -8,10 +8,10 @@
 - var instaLinks = [smooth1, smooth2, smooth3, smooth4];
 
 //- bouquets:
-- var b1 = {id: 10001, name: "Летний вечер", price: "1400", descr: "Букет с розами, хлопком, лимониумом.", picture: "/assets/images/bouquets/summerEvening.jpg"};
-- var b2 = {id: 10002, name: "Фруктовый праздник", price: "1600", descr: "Букет с альстромерией, лаймом, сливой, киви, мандаринами и зеленью", picture: "/assets/images/bouquets/fruits.jpg"};
-- var b3 = {id: 10003, name: "Розовый фламинго", price: "800", descr: "Композиция с герберой, хлопком, кустовой розой, макарунс.", picture: "/assets/images/bouquets/pink.jpg"};
-- var b4 = {id: 10003, name: "Нежность", price: "1400", descr: "Цветочная корзина с розами, кустовыми розами, кустовой хризантемой, зеленью.", picture: "/assets/images/bouquets/sense.jpg"};
+- var b1 = {id: 10001, name: "Летний вечер", price: "1400", descr: "Букет с розами, хлопком, лимониумом.", picture: "/assets/images/bouquets/summerEvening.jpg", pictureMobile: "/assets/images/bouquets/summerEveningMobile.jpg"};
+- var b2 = {id: 10002, name: "Фруктовый праздник", price: "1600", descr: "Букет с альстромерией, лаймом, сливой, киви, мандаринами и зеленью", picture: "/assets/images/bouquets/fruits.jpg", pictureMobile: "/assets/images/bouquets/fruitsMobile.jpg"};
+- var b3 = {id: 10003, name: "Розовый фламинго", price: "800", descr: "Композиция с герберой, хлопком, кустовой розой, макарунс.", picture: "/assets/images/bouquets/pink.jpg", pictureMobile: "/assets/images/bouquets/pinkMobile.jpg"};
+- var b4 = {id: 10003, name: "Нежность", price: "1400", descr: "Цветочная корзина с розами, кустовыми розами, кустовой хризантемой, зеленью.", picture: "/assets/images/bouquets/sense.jpg", pictureMobile: "/assets/images/bouquets/senseMobile.jpg"};
 - var instaBouquets = [b1, b2, b3, b4];
 
 //- contacts
@@ -42,7 +42,9 @@ mixin bouquets(className, items)
             div(class=`${className}__acco_line` id='line')
                 each item in items
                     div(class=`${className}__acco_item`)
-                        img(class=`${className}__acco_pic` src=item.picture)
+                        picture(class=`${className}__acco_pic_wrapper`)
+                            source(srcset=item.picture media="(min-width: 769px) and (min-height: 769px)")
+                            img(class=`${className}__acco_pic` srcset=item.pictureMobile)
                         div(class=`${className}__info`)
                             div(class=`${className}__info_price`)= `${item.price} руб.`
                             div(class=`${className}__info_text`)
