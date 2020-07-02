@@ -17,8 +17,23 @@ class CatalogList extends Component {
                     <CatalogItem />
                     <CatalogItem />
                 </ul>
+                <button onClick={this.getListBouquets}>Test request</button>
             </div>
         )
+    }
+    getListBouquets = async () => {
+        let response = await fetch(`http://localhost/`);
+        let content = await response.text();
+        console.log(response);
+
+
+
+        // const url = new URL(`http://localhost/`);
+        // const request1 = new XMLHttpRequest();
+        // request1.open('GET', url, false);
+        // request1.send();
+        // console.log(request1);
+        // console.log( request1.response );
     }
 };
 

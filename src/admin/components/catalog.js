@@ -27,7 +27,6 @@ class Catalog extends Component {
         this.setState({
             newBouquet: !this.state.newBouquet
         })
-        console.log(this.state.newBouquet);
     }
 };
 

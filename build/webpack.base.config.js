@@ -3,6 +3,7 @@ const fs = require("fs");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const babel = require('babel-polyfill');
 
 
 const PATHS = {
@@ -23,8 +24,8 @@ module.exports = {
     },
 
     entry: {
-        "app": PATHS.src,
-        "admin": "./src/admin/index.js"
+        "app": ['babel-polyfill', PATHS.src],
+        "admin": ['babel-polyfill', "./src/admin/index.js"]
     },
     output: {
         path: PATHS.dist,
