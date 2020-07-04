@@ -3,7 +3,11 @@ import CatalogItem from "./catalogItem.js";
 
 class CatalogList extends Component {
     constructor(props) {
-        super(props)
+        super(props);
+        // this.getListBouquets = this.getListBouquets.bind(this);
+    }
+    componentDidMount() {
+        this.getListBouquets()
     }
     render() {
         const {handleClickNewBouquet} = this.props;
@@ -17,8 +21,14 @@ class CatalogList extends Component {
                     <CatalogItem />
                     <CatalogItem />
                 </ul>
+                {/* <button onClick={this.getListBouquets}>Test request</button> */}
             </div>
         )
+    }
+    getListBouquets = async () => {
+        let response = await fetch(`http://localhost/list.php`);
+        let content = await response.json();
+        console.log(content);
     }
 };
 
