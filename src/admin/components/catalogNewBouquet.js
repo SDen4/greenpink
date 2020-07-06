@@ -9,7 +9,7 @@ class CatalogNewBouquet extends Component {
         bouquetName: "",
         bouquetPrice: 999,
         bouquetDescription: "",
-        bouquetPic: {}
+        bouquetPic: ""
     }
     render() {
         const {handleClickNewBouquet} = this.props;
@@ -86,9 +86,17 @@ class CatalogNewBouquet extends Component {
     }
     sendNewBouquet = (event) => {
         event.preventDefault();
-        alert("New bouquet name: " + this.state.bouquetName + ", price: " + this.state.bouquetPrice + ", description: " + this. state.bouquetDescription + ", photo: " + this.state.bouquetPic);
-        console.log(this.fileInput.current.files[0].name);
-        console.log(this.state.bouquetPic);
+        // console.log("New bouquet name: " + this.state.bouquetName + ", price: " + this.state.bouquetPrice + ", description: " + this. state.bouquetDescription + ", photo: " + this.state.bouquetPic);
+
+        let formData = new FormData();
+        formData.append("bouquetName", this.state.bouquetName);
+        formData.append("bouquetPrice", this.state.bouquetPrice);
+        formData.append("bouquetDescription", this.state.bouquetDescription);
+        formData.append("bouquetPic", this.state.bouquetPic);
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", `http://localhost/new.php`);
+        xhr.send(formData);
     }
 };
 
