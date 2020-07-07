@@ -37,13 +37,11 @@ class App extends Component {
         this.setState({
             activeSection: "Catalog"
         })
-        console.log(this.state.activeSection)
     }
     changeSectionToLastBouquets = () => {
         this.setState({
             activeSection: "LastBouquets"
         })
-        console.log(this.state.activeSection)
     }
 };
 

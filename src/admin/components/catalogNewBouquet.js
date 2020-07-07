@@ -65,6 +65,8 @@ class CatalogNewBouquet extends Component {
                             <button 
                                 type="reset" 
                                 className="admin__button admin__button_form_cancel"
+                                // from parent move the function handleClickNewBouquet to change the parent's state
+                                onClick={() => {this.props.handleClear(false)}}
                             >Cansel</button>
                             <button 
                                 type="submit" 
@@ -97,6 +99,9 @@ class CatalogNewBouquet extends Component {
         let xhr = new XMLHttpRequest();
         xhr.open("POST", `http://localhost/new.php`);
         xhr.send(formData);
+
+        // close the new bouquet window after adding new bouquet
+        this.props.handleClear(false);
     }
 };
 

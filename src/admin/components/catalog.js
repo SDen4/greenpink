@@ -11,7 +11,8 @@ class Catalog extends Component {
         const {activeSection} = this.props;
         return (
             <section className={`${activeSection === "Catalog" ? "admin admin__catalog" : "admin__catalog_unactive"}`}>
-                <CatalogNewBouquet handleClickNewBouquet={this.state.newBouquet} />
+                {/* handleClear - move function handleClickNewBouquet to child to change this parent's state */}
+                <CatalogNewBouquet handleClickNewBouquet={this.state.newBouquet} handleClear={this.handleClickNewBouquet} />
                 <CatalogList handleClickNewBouquet={this.state.newBouquet} />
                 <div className="catalog__footer">
                     <div className={`${this.state.newBouquet ? "catalog__footer_delete_unactive" : "catalog__footer_delete"}`}>
