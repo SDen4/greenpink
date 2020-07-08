@@ -27,6 +27,7 @@ class CatalogNewBouquet extends Component {
                                 onChange={this.handleChange} 
                                 name="bouquetName"
                             ></input>
+                            <div className="admin__new-bouquet_form_error">Enter the name of the bouquet</div>
                         </label>
                         <label className="admin__new-bouquet_form_label">
                             <div className="admin__new-bouquet_form_name">Price</div>
@@ -37,6 +38,7 @@ class CatalogNewBouquet extends Component {
                                 onChange={this.handleChange}
                                 name="bouquetPrice"
                             ></input>
+                            <div className="admin__new-bouquet_form_error">Enter the price</div>
                         </label>
                         <label className="admin__new-bouquet_form_label">
                             <div className="admin__new-bouquet_form_name">Description</div>
@@ -47,6 +49,7 @@ class CatalogNewBouquet extends Component {
                                 onChange={this.handleChange}
                                 name="bouquetDescription"
                             ></textarea>
+                            <div className="admin__new-bouquet_form_error admin__new-bouquet_form_error_textarea">Enter the description</div>
                         </label>
                     </div>
                     <div className="admin__new-bouquet_form_part admin__new-bouquet_form_part_right">
