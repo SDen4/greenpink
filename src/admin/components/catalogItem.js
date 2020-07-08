@@ -13,8 +13,11 @@ class CatalogItem extends Component {
                     <div className="catalog__item_title">{bouquet.name}</div>
                     <div className="catalog__item_price">{bouquet.price}</div>
                 </div>
-                <div className="catalog__item_rotate">
-                    <div className="catalog__item_rotate_piece"></div>
+                <div className="catalog__item_right">
+                    <div className="catalog__item_rotate">
+                        <div className="catalog__item_rotate_piece"></div>
+                    </div>
+                    <button className="admin__button_item_close"></button>
                 </div>
             </li>
         )

@@ -46,3 +46,19 @@
         background-color: $color5-plus37;
     }
 }
+
+.admin__button_login_close, .admin__button_item_close  {
+    width: 22PX;
+    height: 22PX;
+    border: 0;
+    outline: none;
+    background: url("/imagesAdmin/Cross.svg");
+    cursor: pointer;
+}
+
+.admin__button_login_close {
+    display: block;
+    position: absolute;
+    top: 5%;
+    left: 90%;
+}

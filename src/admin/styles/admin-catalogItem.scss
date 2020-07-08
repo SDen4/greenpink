@@ -11,10 +11,18 @@
     }
 }
 
-.catalog__item_left {
+.catalog__item_left, .catalog__item_right {
     display: flex;
     align-items: center;
-    width: 95%;
+}
+
+.catalog__item_left {
+    width: 85%;
+}
+
+.catalog__item_right {
+    justify-content: flex-end;
+    width: 15%;
 }
 
 .catalog__item_checkbox,
@@ -33,6 +41,7 @@
     width: 15px;
     height: 15px;
     cursor: pointer;
+    margin-right: 20px;
 }
 
 .catalog__item_rotate_piece {
