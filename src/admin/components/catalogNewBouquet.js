@@ -49,7 +49,7 @@ class CatalogNewBouquet extends Component {
                                 onChange={this.handleChange}
                                 name="bouquetDescription"
                             ></textarea>
-                            <div className="admin__new-bouquet_form_error admin__new-bouquet_form_error_textarea">Enter the description</div>
+                            <div className="admin__new-bouquet_form_error">Enter the description</div>
                         </label>
                     </div>
                     <div className="admin__new-bouquet_form_part admin__new-bouquet_form_part_right">
