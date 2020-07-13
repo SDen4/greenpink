@@ -1,15 +1,19 @@
 import React, {Component} from 'react';
 
+
 class CatalogNewBouquet extends Component {
-    constructor(props) {
-        super(props);
-        this.fileInput = React.createRef();
-    }
     state = {
         bouquetName: "",
-        bouquetPrice: 999,
+        bouquetPrice: 0,
         bouquetDescription: "",
-        bouquetPic: ""
+        bouquetPic: "",
+        // validation
+        formErrors: {bouquetName: "", bouquetPrice: "", bouquetDescription: "", bouquetPic: ""},
+        bouquetNameValid: false,
+        bouquetPriceValid: false,
+        bouquetDescriptionValid: false,
+        bouquetPicValid: false,
+        formValid: false
     }
     render() {
         const {handleClickNewBouquet} = this.props;
@@ -27,7 +31,7 @@ class CatalogNewBouquet extends Component {
                                 onChange={this.handleChange} 
                                 name="bouquetName"
                             ></input>
-                            <div className="admin__new-bouquet_form_error">Enter the name of the bouquet</div>
+                            <div className={`${!this.state.bouquetNameValid ? "admin__new-bouquet_form_error" : "admin__new-bouquet_form_error_unactive"}`}>Enter the name of the bouquet</div>
                         </label>
                         <label className="admin__new-bouquet_form_label">
                             <div className="admin__new-bouquet_form_name">Price</div>
@@ -38,7 +42,8 @@ class CatalogNewBouquet extends Component {
                                 onChange={this.handleChange}
                                 name="bouquetPrice"
                             ></input>
-                            <div className="admin__new-bouquet_form_error">Enter the price</div>
+                            <div className={`${!this.state.bouquetPriceValid ? "admin__new-bouquet_form_error" : "admin__new-bouquet_form_error_unactive"}`}>Enter the name of the bouquet</div>
+                            {/* <div className="admin__new-bouquet_form_error">Enter the price</div> */}
                         </label>
                         <label className="admin__new-bouquet_form_label">
                             <div className="admin__new-bouquet_form_name">Description</div>
@@ -49,7 +54,8 @@ class CatalogNewBouquet extends Component {
                                 onChange={this.handleChange}
                                 name="bouquetDescription"
                             ></textarea>
-                            <div className="admin__new-bouquet_form_error">Enter the description</div>
+                            <div className={`${!this.state.bouquetDescriptionValid ? "admin__new-bouquet_form_error" : "admin__new-bouquet_form_error_unactive"}`}>Enter the name of the bouquet</div>
+                            {/* <div className="admin__new-bouquet_form_error">Enter the description</div> */}
                         </label>
                     </div>
                     <div className="admin__new-bouquet_form_part admin__new-bouquet_form_part_right">
@@ -74,6 +80,7 @@ class CatalogNewBouquet extends Component {
                             <button 
                                 type="submit" 
                                 className="admin__button admin__button_form_save"
+                                disabled={!this.state.formValid}
                             >Save</button>
                         </div>
                     </div>
@@ -86,12 +93,14 @@ class CatalogNewBouquet extends Component {
         const value = target.name === "bouquetPic" ? this.fileInput.current.files[0] : target.value;
         const name = target.name;
         this.setState({
-            [name]: value
-        })
+            [name]: value},
+            () => {
+                this.validateField(name, value)
+            }
+        )
     }
     sendNewBouquet = (event) => {
         event.preventDefault();
-        // console.log("New bouquet name: " + this.state.bouquetName + ", price: " + this.state.bouquetPrice + ", description: " + this. state.bouquetDescription + ", photo: " + this.state.bouquetPic);
 
         let formData = new FormData();
         formData.append("bouquetName", this.state.bouquetName);
@@ -106,7 +115,48 @@ class CatalogNewBouquet extends Component {
         // close the new bouquet window after adding new bouquet
         this.props.handleClear(false);
     }
-};
+    //validation
+    validateField(fieldName, value) {
+        let fieldValidationErrors = this.state.formErrors;
+        let bouquetNameValid = this.state.bouquetNameValid;
+        let bouquetPriceValid = this.state.bouquetPriceValid;
+        let bouquetDescriptionValid = this.state.bouquetDescriptionValid;
+        // let bouquetPicValid = this.state.bouquetPicValid;
 
+        switch(fieldName) {
+            case 'bouquetName': 
+                bouquetNameValid = value.length >= 1;
+                fieldValidationErrors.bouquetName = bouquetNameValid && true;
+                break;
+            case 'bouquetPrice': 
+                bouquetPriceValid = value.length >=1 && value > 0;
+                fieldValidationErrors.bouquetPrice = bouquetPriceValid && true;
+                break;
+            case 'bouquetDescription': 
+                bouquetDescriptionValid = value.length >= 1;
+                fieldValidationErrors.bouquetDescription = bouquetDescriptionValid && true;
+                break;
+            // case 'bouquetPic': 
+            //     bouquetPicValid = value.length >= 1;
+            //     fieldValidationErrors.bouquetPic = bouquetPicValid && true;
+            //     break;
+        }
+        this.setState({formErrors: fieldValidationErrors,
+            bouquetNameValid: bouquetNameValid,
+            bouquetPriceValid: bouquetPriceValid,
+            bouquetDescriptionValid: bouquetDescriptionValid,
+            // bouquetPicValid: bouquetPicValid
+            }, this.validateForm
+        );
+    }
+    validateForm() {
+        this.setState({formValid: 
+            this.state.bouquetNameValid 
+            && this.state.bouquetPriceValid 
+            && this.state.bouquetDescriptionValid 
+            // && this.state.bouquetPicValid
+        })
+    }
+};
 
 export default CatalogNewBouquet;
