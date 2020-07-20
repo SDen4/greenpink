@@ -3,6 +3,9 @@ import React, {Component} from 'react';
 
 class CatalogNewBouquet extends Component {
     state = {
+        file: '',
+        imagePreviewUrl: '',
+
         bouquetName: "",
         bouquetPrice: 0,
         bouquetDescription: "",
@@ -14,6 +17,21 @@ class CatalogNewBouquet extends Component {
         bouquetDescriptionValid: false,
         bouquetPicValid: false,
         formValid: false
+    }
+    handleImageChange(e) {
+        e.preventDefault();
+    
+        let reader = new FileReader();
+        let file = e.target.files[0];
+    
+        reader.onloadend = () => {
+            this.setState({
+                file: file,
+                imagePreviewUrl: reader.result
+            });
+        }
+    
+        reader.readAsDataURL(file)
     }
     render() {
         const {handleClickNewBouquet} = this.props;
@@ -66,7 +84,9 @@ class CatalogNewBouquet extends Component {
                                 name="bouquetPic"
                                 accept="image/*"
                                 ref={this.fileInput}
+                                onChange={(e)=>this.handleImageChange(e)}
                             ></input>
+                            <img className={`${this.state.imagePreviewUrl && "admin__new-bouquet_photo_preload"}`} src={this.state.imagePreviewUrl}></img>
                             <span className="admin__new-buoquet_download_text">Download photo</span>
                             <div className="admin__button">Download</div>
                         </label>

@@ -87,11 +87,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
     width: 80%;
     height: 80%;
     border-radius: $borderRadius;
     background-color: $color2;
     margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .admin__new-buoquet_download_text {
@@ -99,9 +101,20 @@
 }
 
 #admin__add_bouquet-photo {
-    width: .01px;
-    height: .01px;
+    width: 1px;
+    height: 1px;
     opacity: 0;
     position: absolute;
     z-index: -10;
+}
+
+.admin__new-bouquet_photo_preload {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
