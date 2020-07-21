@@ -95,7 +95,7 @@ class CatalogNewBouquet extends Component {
                                 type="reset" 
                                 className="admin__button admin__button_form_cancel"
                                 // from parent move the function handleClickNewBouquet to change the parent's state
-                                onClick={() => {this.props.handleClear(false)}}
+                                onClick={() => {this.clearForm()}}
                             >Cansel</button>
                             <button 
                                 type="submit" 
@@ -107,6 +107,18 @@ class CatalogNewBouquet extends Component {
                 </form>
             </div>
         )
+    }
+    // clear form pushing Reset
+    clearForm() {
+        this.setState({
+            file: '',
+            imagePreviewUrl: '',
+            bouquetName: "",
+            bouquetPrice: 0,
+            bouquetDescription: ""
+        });
+        // close new bouquet form
+        this.props.handleClear(false)
     }
     handleChange = (event) => {
         const target = event.target;
