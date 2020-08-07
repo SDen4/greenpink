@@ -8,7 +8,7 @@ class CatalogItem extends Component {
                 <div className="catalog__item_left">
                     <input className="catalog__item_checkbox" type="checkbox"></input>
                     <div className="catalog__item_pic-container">
-                        <img className="catalog__item_pic-preview"></img>
+                        <img className="catalog__item_pic-preview" src={bouquet.pic}></img>
                     </div>
                     <div className="catalog__item_title">{bouquet.name}</div>
                     <div className="catalog__item_price">{bouquet.price}</div>

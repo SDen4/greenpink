@@ -28,6 +28,7 @@ class CatalogList extends Component {
         this.setState({
             bouquetsListState: content
         });
+        console.log(this.state.bouquetsListState);
     }
 };
 

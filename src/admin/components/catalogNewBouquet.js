@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 
 
 class CatalogNewBouquet extends Component {
+    // constructor(props){
+    //     super(props);
+    //     this.fileInput = React.createRef();
+    //     this.sendNewBouquet = this.sendNewBouquet.bind(this);
+    // }
     state = {
         file: '',
         imagePreviewUrl: '',
@@ -30,15 +35,15 @@ class CatalogNewBouquet extends Component {
                 imagePreviewUrl: reader.result
             });
         }
-    
         reader.readAsDataURL(file)
+console.log(this.state.file);
     }
     render() {
         const {handleClickNewBouquet} = this.props;
         return (
             <div className={`${handleClickNewBouquet ? "catalog__new-bouquet_active" : "catalog__new-bouquet"}`}>
                 <h2 className="admin__subtitle">Add the new bouquet</h2>
-                <form className="admin__new-bouquet_form" onSubmit={this.sendNewBouquet}>
+                <form className="admin__new-bouquet_form" encType="multipart/form-data" onSubmit={this.sendNewBouquet}>
                     <div className="admin__new-bouquet_form_part admin__new-bouquet_form_part_left">
                         <label className="admin__new-bouquet_form_label">
                             <div className="admin__new-bouquet_form_name">Name</div>
@@ -79,11 +84,11 @@ class CatalogNewBouquet extends Component {
                     <div className="admin__new-bouquet_form_part admin__new-bouquet_form_part_right">
                         <label className="admin__new-buoquet_download" htmlFor="admin__add_bouquet-photo">
                             <input 
-                                id="admin__add_bouquet-photo" 
-                                type="file" 
+                                id="admin__add_bouquet-photo"
+                                type="file"
                                 name="bouquetPic"
                                 accept="image/*"
-                                ref={this.fileInput}
+                                // ref={this.fileInput}
                                 onChange={(e)=>this.handleImageChange(e)}
                             ></input>
                             <img className={`${this.state.imagePreviewUrl && "admin__new-bouquet_photo_preload"}`} src={this.state.imagePreviewUrl}></img>
@@ -110,6 +115,7 @@ class CatalogNewBouquet extends Component {
     }
     // clear form pushing Reset
     clearForm() {
+        console.log(this.state.file);
         this.setState({
             file: '',
             imagePreviewUrl: '',
@@ -122,7 +128,8 @@ class CatalogNewBouquet extends Component {
     }
     handleChange = (event) => {
         const target = event.target;
-        const value = target.name === "bouquetPic" ? this.fileInput.current.files[0] : target.value;
+        // const value = target.name === "bouquetPic" ? this.fileInput.current.files[0] : target.value;
+        const value = target.name === "bouquetPic" ? this.state.file : target.value;
         const name = target.name;
         this.setState({
             [name]: value},
@@ -138,7 +145,8 @@ class CatalogNewBouquet extends Component {
         formData.append("bouquetName", this.state.bouquetName);
         formData.append("bouquetPrice", this.state.bouquetPrice);
         formData.append("bouquetDescription", this.state.bouquetDescription);
-        formData.append("bouquetPic", this.state.bouquetPic);
+        // formData.append("bouquetPic", this.state.bouquetPic);
+        formData.append("bouquetPic", this.state.file, Blob); // right!!!!
 
         let xhr = new XMLHttpRequest();
         xhr.open("POST", `http://localhost/new.php`);
@@ -146,6 +154,7 @@ class CatalogNewBouquet extends Component {
 
         // close the new bouquet window after adding new bouquet
         this.props.handleClear(false);
+        this.clearForm();
     }
     //validation
     validateField(fieldName, value) {
