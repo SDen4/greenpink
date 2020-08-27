@@ -153,7 +153,8 @@ console.log(this.state.file);
         xhr.send(formData);
 
         // close the new bouquet window after adding new bouquet
-        this.props.handleClear(false);
+        // this.props.handleClear(false); // дубль, уже есть в clearForm()
+        // console.log(this.handleClickNewBouquet);
         this.clearForm();
     }
     //validation
