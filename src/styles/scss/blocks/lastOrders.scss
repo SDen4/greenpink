@@ -23,7 +23,7 @@
     cursor: pointer;
     box-shadow: 3px 3px 5px 1px $color3;
     transition: .2s;
-
+    -webkit-tap-highlight-color: transparent; // delete blue mark of tap in mobile version 
     &:hover {
         box-shadow: 5px 5px 6px 2px $color3;
     }
