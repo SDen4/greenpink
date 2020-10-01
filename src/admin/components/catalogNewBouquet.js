@@ -2,11 +2,6 @@ import React, {Component} from 'react';
 
 
 class CatalogNewBouquet extends Component {
-    // constructor(props){
-    //     super(props);
-    //     this.fileInput = React.createRef();
-    //     this.sendNewBouquet = this.sendNewBouquet.bind(this);
-    // }
     state = {
         file: '',
         imagePreviewUrl: '',
@@ -39,9 +34,8 @@ class CatalogNewBouquet extends Component {
 console.log(this.state.file);
     }
     render() {
-        const {handleClickNewBouquet} = this.props;
         return (
-            <div className={`${handleClickNewBouquet ? "catalog__new-bouquet_active" : "catalog__new-bouquet"}`}>
+            <div className="catalog__new-bouquet">
                 <h2 className="admin__subtitle">Add the new bouquet</h2>
                 <form className="admin__new-bouquet_form" encType="multipart/form-data" onSubmit={this.sendNewBouquet}>
                     <div className="admin__new-bouquet_form_part admin__new-bouquet_form_part_left">

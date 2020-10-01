@@ -6,9 +6,11 @@ import Login from "./login";
 
 class App extends Component {
     state = {
-        activeSection: "Catalog"
+        activeCatalog: true
     }
     render() {
+        const catalog = this.state.activeCatalog && <Catalog />
+        const lastBouquets = !this.state.activeCatalog && <LastBouquets />
         return (
             <div className="admin-wrapper">
                 <Login />
@@ -19,28 +21,28 @@ class App extends Component {
                 <main className="admin__main">
                     <div className="admin__nav_container">
                         <nav className="admin__nav">
-                            <a onClick={this.changeSectionToCatalog}
-                               className={`${this.state.activeSection === "Catalog" && "admin__nav_active"} ${"admin__nav_link"}`}
+                            <a onClick={this.changeToCatalog}
+                               className={`${this.state.activeCatalog && "admin__nav_active"} ${"admin__nav_link"}`}
                             >Catalog</a>
-                            <a onClick={this.changeSectionToLastBouquets}
-                               className={`${this.state.activeSection === "LastBouquets" && "admin__nav_active"} ${"admin__nav_link"}`}
+                            <a onClick={this.changeToLastBouquets}
+                               className={`${!this.state.activeCatalog && "admin__nav_active"} ${"admin__nav_link"}`}
                             >Last bouquets</a>
                         </nav>
                     </div>
-                    <Catalog activeSection={this.state.activeSection} />
-                    <LastBouquets activeSection={this.state.activeSection} />
+                    {catalog}
+                    {lastBouquets}
                 </main>
             </div>
         )
     }
-    changeSectionToCatalog = () => {
+    changeToCatalog = () => {
         this.setState({
-            activeSection: "Catalog"
+            activeCatalog: true
         })
     }
-    changeSectionToLastBouquets = () => {
+    changeToLastBouquets = () => {
         this.setState({
-            activeSection: "LastBouquets"
+            activeCatalog: false
         })
     }
 };

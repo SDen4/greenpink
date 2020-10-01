@@ -9,12 +9,11 @@ class CatalogList extends Component {
         this.getListBouquets();
     }
     render() {
-        const {handleClickNewBouquet} = this.props;
         const bouquetsList = this.state.bouquetsListState;
         return (
-            <div className={`${handleClickNewBouquet && "catalog__content_unactive"}`}>
-                <h2 className="admin__subtitle">Catalog of the bouquets</h2>
-                <ul className="admin__window catalog__window">
+            <div>
+                <h2 className="catalogList__subtitle">Catalog of the bouquets</h2>
+                <ul className="catalogList__window">
                     {bouquetsList.map((bouquet, index) => (
                         <CatalogItem key={index} bouquet={bouquet}/>
                     ))}

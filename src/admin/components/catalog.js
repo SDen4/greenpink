@@ -8,18 +8,21 @@ class Catalog extends Component {
         newBouquet: false
     }
     render() {
-        const {activeSection} = this.props;
+        const newBouquet = this.state.newBouquet && <CatalogNewBouquet handleClear={this.handleClickNewBouquet} />;
+        const catalogList = !this.state.newBouquet && <CatalogList />;
         return (
-            <section className={`${activeSection === "Catalog" ? "admin admin__catalog" : "admin__catalog_unactive"}`}>
-                {/* handleClear - move function handleClickNewBouquet to child to change this parent's state */}
-                <CatalogNewBouquet handleClickNewBouquet={this.state.newBouquet} handleClear={this.handleClickNewBouquet} />
-                <CatalogList handleClickNewBouquet={this.state.newBouquet} />
+            <section className="admin catalog">
+                {newBouquet}
+                {catalogList}
                 <div className="catalog__footer">
                     <div className={`${this.state.newBouquet ? "catalog__footer_delete_unactive" : "catalog__footer_delete"}`}>
                         <input className="catalog__footer_all-items" type="checkbox"></input>
                         <button className="admin__button admin__button_delete">Delete</button>
                     </div>
-                    <button onClick={this.handleClickNewBouquet} className={`${this.state.newBouquet && "admin__button_create_active"} ${"admin__button admin__button_create"}`}>New bouquet</button>
+                    <button
+                        onClick={this.handleClickNewBouquet}
+                        className={`${this.state.newBouquet && "admin__button_create_active"} ${"admin__button admin__button_create"}`}
+                    >New bouquet</button>
                 </div>
             </section>
         )
