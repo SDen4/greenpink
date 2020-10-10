@@ -76,7 +76,7 @@ console.log(this.state.file);
                         </label>
                     </div>
                     <div className="admin-new-bouquet__form_part admin-new-bouquet__form_part_right">
-                        <label className="admin__new-buoquet_download" htmlFor="admin__add_bouquet-photo">
+                        <label className="admin-new-bouquet__download" htmlFor="admin__add_bouquet-photo">
                             <input 
                                 id="admin__add_bouquet-photo"
                                 type="file"
@@ -86,7 +86,7 @@ console.log(this.state.file);
                                 onChange={(e)=>this.handleImageChange(e)}
                             ></input>
                             <img className={`${this.state.imagePreviewUrl && "admin-new-bouquet__photo_preload"}`} src={this.state.imagePreviewUrl}></img>
-                            <span className="admin__new-buoquet_download_text">Download photo</span>
+                            <span className="admin-new-bouquet__download_text">Download photo</span>
                             <div className="admin__button">Download</div>
                         </label>
                         <div className="admin-new-bouquet__form_submit">
