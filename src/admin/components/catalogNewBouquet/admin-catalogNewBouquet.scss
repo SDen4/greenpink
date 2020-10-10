@@ -1,4 +1,4 @@
-.catalog__new-bouquet {
+.admin-new-bouquet {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -8,14 +8,19 @@
     border: 2px solid $color5;
 }
 
-.admin__new-bouquet_form {
+.admin-new-bouquet__subtitle {
+    padding: 10px 20px;
+}
+
+
+.admin-new-bouquet__form {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
 }
 
-.admin__new-bouquet_form_part {
+.admin-new-bouquet__form_part {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,7 +31,7 @@
     }
 }
 
-.admin__new-bouquet_form_label {
+.admin-new-bouquet__form_label {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -37,12 +42,12 @@
     }
 }
 
-.admin__new-bouquet_form_name {
+.admin-new-bouquet__form_name {
     width: 100%;
     margin-bottom: 10px;
 }
 
-.admin__new-bouquet_form_error {
+.admin-new-bouquet__form_error {
     display: block;
     position: absolute;
     bottom: -38px;
@@ -70,11 +75,11 @@
     }
 }
 
-.admin__new-bouquet_form_error_unactive {
+.admin-new-bouquet__form_error_unactive {
     display: none;
 }
 
-.admin__new-bouquet_form_textarea {
+.admin-new-bouquet__form_textarea {
     height: 150px;
 }
 
@@ -104,7 +109,7 @@
     z-index: -10;
 }
 
-.admin__new-bouquet_photo_preload {
+.admin-new-bouquet__photo_preload {
     width: 100%;
     height: 100%;
     object-fit: cover;

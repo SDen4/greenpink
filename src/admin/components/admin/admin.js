@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import Catalog from "./catalog";
-import LastBouquets from "./lastBouquets";
-import Login from "./login";
+import Catalog from "../catalog/catalog";
+import LastBouquets from "../lastBouquets/lastBouquets";
+import Login from "../login/login";
 
 
-class App extends Component {
+class Admin extends Component {
     state = {
         activeCatalog: true
     }
@@ -47,4 +47,4 @@ class App extends Component {
     }
 };
 
-export default App;
+export default Admin;

@@ -5,12 +5,10 @@
 @import "./styles/admin-base.scss";
 @import "./styles/admin-buttons.scss";
 
-@import "./styles/admin-login.scss";
-@import "./styles/admin-header.scss";
-@import "./styles/admin-main.scss";
-@import "./styles/admin-nav.scss";
-@import "./styles/admin-catalog.scss";
-@import "./styles/admin-catalogNewBouquet.scss";
-@import "./styles/admin-catalogList.scss";
-@import "./styles/admin-catalogItem.scss";
-@import "./styles/admin-lastBouquets.scss";
+@import "./components/login/admin-login.scss";
+@import "./components/admin/admin.scss";
+@import "./components/catalog/admin-catalog.scss";
+@import "./components/catalogNewBouquet/admin-catalogNewBouquet.scss";
+@import "./components/catalogList/admin-catalogList.scss";
+@import "./components/catalogItem/admin-catalogItem.scss";
+@import "./components/lastBouquets/admin-lastBouquets.scss";

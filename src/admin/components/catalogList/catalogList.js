@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import CatalogItem from "./catalogItem.js";
+import CatalogItem from "../catalogItem/catalogItem.js";
 
 class CatalogList extends Component {
     state = {

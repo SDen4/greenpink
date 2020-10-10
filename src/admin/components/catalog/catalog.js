@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import CatalogList from "./catalogList";
-import CatalogNewBouquet from "./catalogNewBouquet";
+import CatalogList from "../catalogList/catalogList";
+import CatalogNewBouquet from "../catalogNewBouquet/catalogNewBouquet";
 
 
 class Catalog extends Component {
@@ -11,7 +11,7 @@ class Catalog extends Component {
         const newBouquet = this.state.newBouquet && <CatalogNewBouquet handleClear={this.handleClickNewBouquet} />;
         const catalogList = !this.state.newBouquet && <CatalogList />;
         return (
-            <section className="admin catalog">
+            <section className="catalog">
                 {newBouquet}
                 {catalogList}
                 <div className="catalog__footer">

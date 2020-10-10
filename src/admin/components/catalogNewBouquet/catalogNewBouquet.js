@@ -35,12 +35,12 @@ console.log(this.state.file);
     }
     render() {
         return (
-            <div className="catalog__new-bouquet">
-                <h2 className="admin__subtitle">Add the new bouquet</h2>
-                <form className="admin__new-bouquet_form" encType="multipart/form-data" onSubmit={this.sendNewBouquet}>
-                    <div className="admin__new-bouquet_form_part admin__new-bouquet_form_part_left">
-                        <label className="admin__new-bouquet_form_label">
-                            <div className="admin__new-bouquet_form_name">Name</div>
+            <div className="admin-new-bouquet">
+                <h2 className="admin-new-bouquet__subtitle">Add the new bouquet</h2>
+                <form className="admin-new-bouquet__form" encType="multipart/form-data" onSubmit={this.sendNewBouquet}>
+                    <div className="admin-new-bouquet__form_part admin-new-bouquet__form_part_left">
+                        <label className="admin-new-bouquet__form_label">
+                            <div className="admin-new-bouquet__form_name">Name</div>
                             <input 
                                 type="text"
                                 placeholder="Enter the name of the bouquet" 
@@ -48,10 +48,10 @@ console.log(this.state.file);
                                 onChange={this.handleChange} 
                                 name="bouquetName"
                             ></input>
-                            <div className={`${!this.state.bouquetNameValid ? "admin__new-bouquet_form_error" : "admin__new-bouquet_form_error_unactive"}`}>Enter the name of the bouquet</div>
+                            <div className={`${!this.state.bouquetNameValid ? "admin-new-bouquet__form_error" : "admin-new-bouquet__form_error_unactive"}`}>Enter the name of the bouquet</div>
                         </label>
-                        <label className="admin__new-bouquet_form_label">
-                            <div className="admin__new-bouquet_form_name">Price</div>
+                        <label className="admin-new-bouquet__form_label">
+                            <div className="admin-new-bouquet__form_name">Price</div>
                             <input 
                                 type="number"
                                 placeholder="Enter the price" 
@@ -59,23 +59,23 @@ console.log(this.state.file);
                                 onChange={this.handleChange}
                                 name="bouquetPrice"
                             ></input>
-                            <div className={`${!this.state.bouquetPriceValid ? "admin__new-bouquet_form_error" : "admin__new-bouquet_form_error_unactive"}`}>Enter the name of the bouquet</div>
-                            {/* <div className="admin__new-bouquet_form_error">Enter the price</div> */}
+                            <div className={`${!this.state.bouquetPriceValid ? "admin-new-bouquet__form_error" : "admin-new-bouquet__form_error_unactive"}`}>Enter the name of the bouquet</div>
+                            {/* <div className="admin-new-bouquet__form_error">Enter the price</div> */}
                         </label>
-                        <label className="admin__new-bouquet_form_label">
-                            <div className="admin__new-bouquet_form_name">Description</div>
+                        <label className="admin-new-bouquet__form_label">
+                            <div className="admin-new-bouquet__form_name">Description</div>
                             <textarea 
-                                className="admin__new-bouquet_form_textarea" 
+                                className="admin-new-bouquet__form_textarea" 
                                 placeholder="Enter the description" 
                                 value={this.state.bouquetDescription} 
                                 onChange={this.handleChange}
                                 name="bouquetDescription"
                             ></textarea>
-                            <div className={`${!this.state.bouquetDescriptionValid ? "admin__new-bouquet_form_error" : "admin__new-bouquet_form_error_unactive"}`}>Enter the name of the bouquet</div>
-                            {/* <div className="admin__new-bouquet_form_error">Enter the description</div> */}
+                            <div className={`${!this.state.bouquetDescriptionValid ? "admin-new-bouquet__form_error" : "admin-new-bouquet__form_error_unactive"}`}>Enter the name of the bouquet</div>
+                            {/* <div className="admin-new-bouquet__form_error">Enter the description</div> */}
                         </label>
                     </div>
-                    <div className="admin__new-bouquet_form_part admin__new-bouquet_form_part_right">
+                    <div className="admin-new-bouquet__form_part admin-new-bouquet__form_part_right">
                         <label className="admin__new-buoquet_download" htmlFor="admin__add_bouquet-photo">
                             <input 
                                 id="admin__add_bouquet-photo"
@@ -85,11 +85,11 @@ console.log(this.state.file);
                                 // ref={this.fileInput}
                                 onChange={(e)=>this.handleImageChange(e)}
                             ></input>
-                            <img className={`${this.state.imagePreviewUrl && "admin__new-bouquet_photo_preload"}`} src={this.state.imagePreviewUrl}></img>
+                            <img className={`${this.state.imagePreviewUrl && "admin-new-bouquet__photo_preload"}`} src={this.state.imagePreviewUrl}></img>
                             <span className="admin__new-buoquet_download_text">Download photo</span>
                             <div className="admin__button">Download</div>
                         </label>
-                        <div className="admin__new-bouquet_form_submit">
+                        <div className="admin-new-bouquet__form_submit">
                             <button 
                                 type="reset" 
                                 className="admin__button admin__button_form_cancel"

@@ -4,8 +4,8 @@ import React, {Component} from 'react';
 class LastBouquets extends Component {
     render() {
         return (
-            <section className="admin lastBouquets_active">
-                <h2>Last Bouquets</h2>
+            <section className="lastBouquets">
+                <h2 className="lastBouquets__subtitle">Last Bouquets</h2>
             </section>
         )
     }

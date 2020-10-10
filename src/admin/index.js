@@ -3,6 +3,6 @@ import {render} from 'react-dom';
 
 import "./admin.scss";
 
-import App from "./components/app.js";
+import Admin from "./components/admin/admin.js";
 
-render(<App />, document.getElementById('root'));
+render(<Admin />, document.getElementById('root'));
